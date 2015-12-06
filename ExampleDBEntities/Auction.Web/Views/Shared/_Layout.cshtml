@@ -1,5 +1,7 @@
 ﻿@using System.Activities.Statements
+@using Auction.Model.Enums
 @using Auction.Web.Helpers
+@using Auction.Web.Services
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,13 +27,20 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
+                        if (RoleService.IsAuctionRealtor(User.Identity.Name))
+                        {
+                            <li>
+                                @Html.ActionLink("Realtor Portal", "Index",
+                                         new {area = "AuctionRealtor", controller = "Realtor"})
+                            </li>
+                        }
                         <li>@Html.ActionLink("Sign Out", "Logout", "Home")</li>
                     }
                     else
                     {
                         <li>@Html.ActionLink("Sign In", "Login", "Home")</li>
                     }
-                    
+
                 </ul>
             </div>
         </div>

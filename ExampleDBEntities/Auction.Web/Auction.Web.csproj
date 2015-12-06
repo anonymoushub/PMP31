@@ -123,6 +123,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\AuctionRealtor\AuctionRealtorAreaRegistration.cs" />
+    <Compile Include="Areas\AuctionRealtor\Controllers\RealtorController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -131,6 +132,7 @@
     <Compile Include="Helpers\WebConfigHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\AuthoriseProviderAttribute.cs" />
+    <Compile Include="Services\RoleService.cs" />
     <Compile Include="Utils\CryproUtil.cs" />
     <Compile Include="ViewModels\AuctionViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
@@ -148,6 +150,9 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\AuctionRealtor\Views\web.config" />
+    <Content Include="Areas\AuctionRealtor\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\AuctionRealtor\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\AuctionRealtor\Views\Realtor\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -179,9 +184,7 @@
     <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\AuctionRealtor\Controllers\" />
     <Folder Include="Areas\AuctionRealtor\Models\" />
-    <Folder Include="Areas\AuctionRealtor\Views\Shared\" />
     <Folder Include="Filters\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>

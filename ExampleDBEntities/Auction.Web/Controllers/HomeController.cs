@@ -33,7 +33,7 @@ namespace Auction.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                
+                // TODO!
             }
             return View(userModel);
         }
@@ -41,7 +41,7 @@ namespace Auction.Web.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            return View(new UserViewModel());
+            return View();
         }
 
         [HttpPost]
