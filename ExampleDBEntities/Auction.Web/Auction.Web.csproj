@@ -131,7 +131,7 @@
     </Compile>
     <Compile Include="Helpers\WebConfigHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Providers\AuthoriseProviderAttribute.cs" />
+    <Compile Include="Providers\AuthorizeProviderAttribute.cs" />
     <Compile Include="Services\RoleService.cs" />
     <Compile Include="Utils\CryproUtil.cs" />
     <Compile Include="ViewModels\AuctionViewModel.cs" />

@@ -5,11 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 using Auction.Model;
 using Auction.Model.Enums;
+using Auction.Web.Services;
 
 namespace Auction.Web.Providers
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
-    public class AuthoriseProviderAttribute : AuthorizeAttribute
+    public class AuthorizeProviderAttribute : AuthorizeAttribute
     {
         public Role[] RoleList { get; set; }
 
@@ -24,7 +25,7 @@ namespace Auction.Web.Providers
             {
                 return false;
             }
-            if ((RoleList.Length > 0) && !RoleList.Select(p => p.ToString()).Any<string>(new Func<string, bool>(user.IsInRole)))
+            if (!RoleService.Is(user.Identity.Name, RoleList))
             {
                 return false;
             }
