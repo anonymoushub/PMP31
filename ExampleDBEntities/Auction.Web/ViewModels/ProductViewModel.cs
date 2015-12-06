@@ -1,9 +1,10 @@
-﻿using Auction.Model.Enums;
-using System;
+﻿using System;
+using Auction.Model;
+using Auction.Model.Enums;
 
-namespace Auction.Model
+namespace Auction.Web.ViewModels
 {
-    public class Product : IModel
+    public class ProductViewModel : IModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

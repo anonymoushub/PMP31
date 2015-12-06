@@ -43,8 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auction.cs" />
+    <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Enums\ProductQuality.cs" />
+    <Compile Include="Enums\ProductType.cs" />
     <Compile Include="IModel.cs" />
-    <Compile Include="Role.cs" />
+    <Compile Include="Enums\Role.cs" />
     <Compile Include="Serializer\IModelSerializer.cs" />
     <Compile Include="Serializer\ModelSerializer.cs" />
     <Compile Include="Product.cs" />

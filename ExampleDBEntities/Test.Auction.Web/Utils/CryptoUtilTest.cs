@@ -17,13 +17,13 @@ namespace Test.Auction.Web.Utils
         [TestMethod]
         public void StringToSameHashedStringShouldReturnSuccess()
         {
-            Assert.IsTrue(_cryptoUtil.EqualsTo(Password, _cryptoUtil.HashText(Password)));
+            Assert.IsTrue(_cryptoUtil.EqualsTo(Password, _cryptoUtil.HashText(Password), _cryptoUtil.Salt));
         }
 
         [TestMethod]
         public void StringToAcotherHashedStringShouldReturnError()
         {
-            Assert.IsFalse(_cryptoUtil.EqualsTo(Password, _cryptoUtil.HashText("456")));
+            Assert.IsFalse(_cryptoUtil.EqualsTo(Password, _cryptoUtil.HashText("456"), _cryptoUtil.Salt));
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Data.Entity;
 using Auction.Model;
 
 namespace Auction.Data.Repository
@@ -18,7 +19,8 @@ namespace Auction.Data.Repository
 
         public User GetUserByEmail(string email)
         {
-            return _auctionDbContext.Users.FirstOrDefault(u => u.Email.Equals(email));
+            return _auctionDbContext.Users.Include(u => u.UserRoles)
+                .FirstOrDefault(u => u.Email.Equals(email));
         }
 
         public bool UserInRole(int userId, int roleId)
@@ -33,7 +35,8 @@ namespace Auction.Data.Repository
 
         public User GetById(int id)
         {
-            return _auctionDbContext.Users.Find(id);
+            return _auctionDbContext.Users.Include(u => u.UserRoles)
+                    .FirstOrDefault(u => u.Id == id);
         }
     }
 }

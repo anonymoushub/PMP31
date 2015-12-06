@@ -1,4 +1,5 @@
-﻿@using Auction.Web.Helpers
+﻿@using System.Activities.Statements
+@using Auction.Web.Helpers
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,8 +23,15 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav right">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Sign Out", "Logout", "Home")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Sign In", "Login", "Home")</li>
+                    }
+                    
                 </ul>
             </div>
         </div>

@@ -1,0 +1,13 @@
+﻿@model Auction.Web.ViewModels.UserViewModel
+@{
+    ViewBag.Title = "Registration";
+}
+
+<h2>Registration</h2>
+
+@using (var form = Html.BeginForm("Registration", "HomeController", FormMethod.Post))
+{
+    Html.TextBoxFor(u => u.Email);
+    Html.TextBoxFor(u => u.Password);
+}
+

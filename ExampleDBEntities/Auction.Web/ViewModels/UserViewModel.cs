@@ -1,15 +1,11 @@
 ﻿using System.Collections.Generic;
+using Auction.Model;
 using Auction.Model.Enums;
 
-namespace Auction.Model
+namespace Auction.Web.ViewModels
 {
-    public class User
+    public class UserViewModel
     {
-        public User()
-        {
-            UserRoles = new List<UserRole>();
-        }
-
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

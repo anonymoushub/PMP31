@@ -16,11 +16,13 @@ namespace Auction.Web.Utils
             return Pbkdf2.Compute(plainText);
         }
 
-        public bool EqualsTo(string plainText, string hashedText)
+        public bool EqualsTo(string plainText, string hashedText, string salt)
         {
-            return Pbkdf2.Compute(plainText, Pbkdf2.Salt).Equals(hashedText);
+            return Pbkdf2.Compute(plainText, salt).Equals(hashedText);
         }
 
+        public string Salt { get { return Pbkdf2.Salt; }
+        }
 
     }
 }
