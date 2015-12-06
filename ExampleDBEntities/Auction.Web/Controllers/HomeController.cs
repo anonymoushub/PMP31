@@ -53,6 +53,7 @@ namespace Auction.Web.Controllers
                 if(_cryptoUtil.EqualsTo(userModel.Password, dbUser.Password, dbUser.PasswordSalt))
                 {
                     FormsAuthentication.SetAuthCookie(userModel.Email, true);
+                    
                     return RedirectToAction("Index", "Home");
                 }
             }

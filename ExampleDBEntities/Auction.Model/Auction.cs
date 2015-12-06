@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data;
 
 namespace Auction.Model
 {
@@ -17,5 +19,10 @@ namespace Auction.Model
         public virtual Product Product { get; set; }
         public virtual ICollection<User> PotentialBuyers { get; set; }
 
+        public bool Approved { get; set; }
+
+        [ForeignKey("ApprovedBy")]
+        public int ApprovedById { get; set; }
+        public User ApprovedBy { get; set; }
     }
 }

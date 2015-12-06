@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Security;
+﻿using System.Web.Mvc;
 using Auction.Model.Enums;
 using Auction.Web.Providers;
+using Auction.Web.Services;
 
 namespace Auction.Web.Areas.AuctionRealtor.Controllers
 {
@@ -15,6 +11,7 @@ namespace Auction.Web.Areas.AuctionRealtor.Controllers
         // GET: AuctionRealtor/Realtor
         public ActionResult Index()
         {
+            var user = UserService.GetCurrentUser();
             return View();
         }
 

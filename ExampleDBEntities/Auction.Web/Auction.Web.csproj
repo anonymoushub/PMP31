@@ -133,6 +133,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\AuthorizeProviderAttribute.cs" />
     <Compile Include="Services\RoleService.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Compile Include="Utils\CryproUtil.cs" />
     <Compile Include="ViewModels\AuctionViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
