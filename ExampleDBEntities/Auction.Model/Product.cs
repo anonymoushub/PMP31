@@ -21,18 +21,18 @@ namespace Auction.Model
 
     public enum ProductQuality
     {
-        Perfect = 0,
-        Good = 1,
-        Normal = 2,
-        Bad = 3,
-        Awful = 4
+        Perfect = 1,
+        Good = 2,
+        Normal = 3,
+        Bad = 4,
+        Awful = 5
     }
 
     public enum ProductType
     {
-        Auto = 0,
-        Motorcycle = 1,
-        Scooter = 2,
-        Bike = 3
+        Auto = 1,
+        Motorcycle = 2,
+        Scooter = 3,
+        Bike = 4
     }
 }

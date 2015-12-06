@@ -21,6 +21,16 @@ namespace Auction.Data.Repository
             return _auctionDbContext.Users.FirstOrDefault(u => u.Email.Equals(email));
         }
 
+        public bool UserInRole(int userId, int roleId)
+        {
+            return GetById(userId).UserRoles.Any(r => r.Id == roleId);
+        }
+
+        public void CreateUser(User u)
+        {
+            _auctionDbContext.Users.Add(u);
+        }
+
         public User GetById(int id)
         {
             return _auctionDbContext.Users.Find(id);

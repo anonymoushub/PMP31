@@ -1,3 +1,7 @@
+using System.Collections.Generic;
+using Auction.Model;
+using Auction.Model.Serializer;
+
 namespace Auction.Data.Migrations
 {
     using System;
@@ -15,17 +19,24 @@ namespace Auction.Data.Migrations
         protected override void Seed(Auction.Data.AuctionDbContext context)
         {
             //  This method will be called after migrating to the latest version.
+            var simpleUserRole = new UserRole {Name = "SimpleUser"};
+            var adminUserRole = new UserRole {Name = "Admin"};
+            var auctionRealtorUserRole = new UserRole {Name = "AuctionRealtor"};
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            context.UserRoles.AddOrUpdate(r => r.Id,
+                simpleUserRole, adminUserRole, auctionRealtorUserRole);
+
+            context.Users.AddOrUpdate(u=>u.Id,
+               new User {
+                    FirstName = "Sanya",
+                    LastName = "Kaser",
+                    Email = "test.test@gmail.com",
+                    Password = "EMPTY",
+                    PasswordSalt = "EMPTY",
+                    Cash = 1000,
+                    Gender = Gender.Male,
+                    UserRoles = new List<UserRole> { adminUserRole, auctionRealtorUserRole }
+                });
         }
     }
 }
