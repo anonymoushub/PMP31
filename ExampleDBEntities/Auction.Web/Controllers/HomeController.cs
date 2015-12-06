@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Security;
 using Auction.Data.UnitOfWork;
-using Auction.Model;
 using Auction.Web.Utils;
 using Auction.Web.ViewModels;
 
@@ -13,7 +8,7 @@ namespace Auction.Web.Controllers
 {
     public class HomeController : BaseController
     {
-        private CryproUtil _cryptoUtil;
+        private readonly CryproUtil _cryptoUtil;
 
         public HomeController(IUnitOfWork unit) : base(unit)
         {
