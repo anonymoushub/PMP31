@@ -21,8 +21,6 @@ namespace Auction.Model
 
         public bool Approved { get; set; }
 
-        [ForeignKey("ApprovedBy")]
-        public int ApprovedById { get; set; }
         public User ApprovedBy { get; set; }
     }
 }

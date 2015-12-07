@@ -1,3 +1,23 @@
 ﻿.right {
     float: right
 }
+
+.img {
+    width: 100%;
+}
+
+.hdr {
+    height: 105px;
+}
+
+.bordered {
+    border: 1px solid #ddd;
+}
+
+.btnm {
+    margin-top: 10px;
+}
+
+.mt-50 {
+    margin-top: 50px
+}

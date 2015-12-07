@@ -144,6 +144,10 @@
     <Content Include="Content\auction.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\b.jpg" />
+    <Content Include="Content\img\m.jpg" />
+    <Content Include="Content\img\p.jpg" />
+    <Content Include="Content\img\a.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

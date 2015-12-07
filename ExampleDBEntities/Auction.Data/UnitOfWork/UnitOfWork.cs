@@ -45,5 +45,12 @@ namespace Auction.Data.UnitOfWork
         public IUserRepository UserRepository {
             get { return _userRepository ?? (_userRepository = new UserRepository(_auctionDbContext)); }
         }
+
+        private IAuctionRepository _auctionRepository;
+
+        public IAuctionRepository AuctionRepository
+        {
+            get { return _auctionRepository ?? (_auctionRepository = new AuctionRepository(_auctionDbContext)); }
+        }
     }
 }
