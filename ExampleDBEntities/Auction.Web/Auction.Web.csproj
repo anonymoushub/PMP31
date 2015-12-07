@@ -193,7 +193,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\AuctionRealtor\Models\" />
-    <Folder Include="Filters\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

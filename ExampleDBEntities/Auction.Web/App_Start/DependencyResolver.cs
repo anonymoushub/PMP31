@@ -5,7 +5,6 @@ using Auction.Data.Repository;
 using Auction.Data.UnitOfWork;
 using Ninject;
 
-
 namespace Auction.Web
 {
     public class AuctionDependencyResolver : IDependencyResolver
