@@ -25,7 +25,8 @@ namespace Auction.Data.Repository
 
         public IQueryable<Model.Auction> GetApprovedAuctions()
         {
-            return _auctionDbContext.Auctions.Where(a => a.Approved);
+            return _auctionDbContext.Auctions.Include(a => a.ApprovedBy)
+                                             .Where(a => a.Approved);
         }
     }
 }

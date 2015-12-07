@@ -4,14 +4,23 @@
 
 <div class="row mt-50">
     <div class="col-lg-3 col-md-3 col-sm-4">
-        <div class="list-group table-of-contents">
-            <a class="list-group-item" href="#navbar">All Auctions</a>
-            <a class="list-group-item" href="#buttons">Approved</a>
-            <a class="list-group-item" href="#typography">Approved By Me</a>
-            <a class="list-group-item" href="#dialogs">Dialogs</a>
+        <div class="row">
+            <h2>@User.Identity.Name</h2> <span></span>
+            <div class="list-group w-95p">
+                    @Html.ActionLink("All auctions", "Index",
+                                        new { area = "AuctionRealtor", controller = "Realtor" },
+                                        new { @class = "list-group-item" })
+
+                    @Html.ActionLink("Approved", "Approved",
+                                        new { area = "AuctionRealtor", controller = "Realtor" },
+                                        new { @class = "list-group-item" })
+
+                    @Html.ActionLink("Approved by me", "ApprovedByMe",
+                                        new { area = "AuctionRealtor", controller = "Realtor" },
+                                        new { @class = "list-group-item" })
+            </div>
         </div>
     </div>
-
     <div class="col-lg-9 col-md-9 col-sm-8">
         @RenderBody()
     </div>

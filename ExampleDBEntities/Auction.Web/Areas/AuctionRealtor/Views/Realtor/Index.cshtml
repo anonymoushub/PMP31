@@ -10,10 +10,22 @@
     @foreach (var a in Model)
     {
         <div class="col-md-4 bordered">
-            <h2 class="hdr">@a.Name</h2>
+            <h2>@a.Name</h2>
             <img src="@a.Product.ImageUrl" class="img" />
             <p>
-                <a class="btn btn-default btnm" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a>
+                @Html.ActionLink("Details", "Details", new { a.Id },
+                                    new { @class="btn btn-default btnm" })
+
+                @if (!a.Approved)
+                {
+                    @Html.ActionLink("Approve", "Approve", new {a.Id},
+                        new {@class = "btn btn-primary btnm"})
+                }
+                else
+                {
+                    @Html.ActionLink("Decline", "Decline", new { a.Id },
+                        new { @class = "btn btn-danger btnm" })
+                }
             </p>
         </div>
     }

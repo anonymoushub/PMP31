@@ -1,0 +1,63 @@
+﻿@using System.Globalization
+@model Auction.Model.Auction
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Model.Name</h2>
+
+<div class="container">
+    <div class="row">
+        <img src="@Model.Product.ImageUrl"/>
+    </div>
+</div>
+
+<table class="table table-striped table-hover ">
+    <tbody>
+        <tr>
+            <td><b>Product Name</b></td>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td><b>Initial Price</b></td>
+            <td>@Model.Product.AboutPrice.ToString(CultureInfo.InvariantCulture) $</td>
+        </tr>
+        <tr>
+            <td><b>Description</b></td>
+            <td>@Model.Description</td>
+        </tr>
+        <tr>
+            <td><b>Start date & time</b></td>
+            <td>@Model.StartTime.ToShortDateString() at @Model.StartTime.ToShortTimeString() </td>
+        </tr>
+        <tr>
+            <td><b>Quality</b></td>
+            <td>@Model.Product.ProductQuality.ToString()</td>
+        </tr>
+        <tr >
+            <td><b>Type</b></td>
+            <td>@Model.Product.ProductType.ToString()</td>
+        </tr>
+        <tr>
+            <td><b>Year</b></td>
+            <td>@Model.Product.Year</td>
+        </tr>
+        <tr class="active">
+            <td><b>Sold</b></td>
+            <td>@(Model.Product.Sold?"Yes":"No")</td>
+        </tr>
+    </tbody>
+</table>
+
+@Html.ActionLink("Back", "Index", null,
+                        new { @class = "btn btn-default btnm" })
+@if (!Model.Approved)
+{
+    @Html.ActionLink("Approve", "Approve", new { Model.Id },
+                        new { @class = "btn btn-primary btnm" })
+}
+else
+{
+    @Html.ActionLink("Decline", "Decline", new { Model.Id },
+                        new { @class = "btn btn-danger btnm" })
+}

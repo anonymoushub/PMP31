@@ -63,6 +63,10 @@
     <Compile Include="Migrations\201512062357052_NullableApprovedBy.Designer.cs">
       <DependentUpon>201512062357052_NullableApprovedBy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512071944241_AddProductionYearToProduct.cs" />
+    <Compile Include="Migrations\201512071944241_AddProductionYearToProduct.Designer.cs">
+      <DependentUpon>201512071944241_AddProductionYearToProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AuctionRepository.cs" />
@@ -95,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512062357052_NullableApprovedBy.resx">
       <DependentUpon>201512062357052_NullableApprovedBy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512071944241_AddProductionYearToProduct.resx">
+      <DependentUpon>201512071944241_AddProductionYearToProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

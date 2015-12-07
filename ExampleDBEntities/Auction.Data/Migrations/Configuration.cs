@@ -10,7 +10,7 @@ namespace Auction.Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(AuctionDbContext context)
@@ -70,6 +70,7 @@ namespace Auction.Data.Migrations
             {
                 Name = "Aston Martin Vulcan 2016",
                 AboutPrice = 2300000,
+                Year = 2016,
                 DateAdded = DateTime.Now,
                 ImageUrl = "/Content/img/a.jpg",
                 ProductQuality = ProductQuality.Perfect,
@@ -79,8 +80,9 @@ namespace Auction.Data.Migrations
 
             Product car2 = new Product
             {
-                Name = "Porsche Cayenne Turbo Mansory 2015",
+                Name = "Porsche Cayenne Turbo Mansory",
                 AboutPrice = 350000,
+                Year = 2015,
                 DateAdded = DateTime.Now,
                 ImageUrl = "/Content/img/p.jpg",
                 ProductQuality = ProductQuality.Good,
@@ -90,8 +92,9 @@ namespace Auction.Data.Migrations
 
             Product car3 = new Product
             {
-                Name = "Mercedes-Benz S 63 AMG Mansory M1000 2015",
+                Name = "Mercedes-Benz S 63 AMG Mansory M1000",
                 AboutPrice = 1200000,
+                Year = 2015,
                 DateAdded = DateTime.Now,
                 ImageUrl = "/Content/img/m.jpg",
                 ProductQuality = ProductQuality.Perfect,
@@ -103,6 +106,7 @@ namespace Auction.Data.Migrations
             {
                 Name = "Bentley EXP 9 F Concept",
                 AboutPrice = 1000000,
+                Year = 2014,
                 DateAdded = DateTime.Now,
                 ImageUrl = "/Content/img/b.jpg",
                 ProductQuality = ProductQuality.Good,
@@ -115,7 +119,8 @@ namespace Auction.Data.Migrations
                 Approved = false,
                 Product = car1,
                 Name = car1.Name,
-                StartTime = new DateTime(2016, 8, 25, 15, 0, 0)
+                StartTime = new DateTime(2016, 8, 25, 15, 0, 0),
+                Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             };
 
             Model.Auction auc2 = new Model.Auction
@@ -123,7 +128,8 @@ namespace Auction.Data.Migrations
                 Approved = false,
                 Product = car2,
                 Name = car2.Name,
-                StartTime = new DateTime(2016, 2, 12, 20, 0, 0)
+                StartTime = new DateTime(2016, 2, 12, 20, 0, 0),
+                Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             };
 
             Model.Auction auc3 = new Model.Auction
@@ -131,7 +137,8 @@ namespace Auction.Data.Migrations
                 Approved = false,
                 Product = car3,
                 Name = car3.Name,
-                StartTime = new DateTime(2016, 4, 7, 18, 0, 0)
+                StartTime = new DateTime(2016, 4, 7, 18, 0, 0),
+                Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             };
 
             context.Products.AddOrUpdate(r => r.Name, car1, car2, car3, car4);

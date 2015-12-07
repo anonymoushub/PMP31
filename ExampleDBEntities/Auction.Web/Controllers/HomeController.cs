@@ -50,10 +50,9 @@ namespace Auction.Web.Controllers
             if (ModelState.IsValid)
             {
                 var dbUser = Unit.UserRepository.GetUserByEmail(userModel.Email);
-                if(_cryptoUtil.EqualsTo(userModel.Password, dbUser.Password, dbUser.PasswordSalt))
+                if (dbUser != null && _cryptoUtil.EqualsTo(userModel.Password, dbUser.Password, dbUser.PasswordSalt))
                 {
                     FormsAuthentication.SetAuthCookie(userModel.Email, true);
-                    
                     return RedirectToAction("Index", "Home");
                 }
             }
