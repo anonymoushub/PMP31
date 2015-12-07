@@ -144,7 +144,9 @@
     <Content Include="Content\auction.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\aq.jpg" />
     <Content Include="Content\img\b.jpg" />
+    <Content Include="Content\img\bm.jpg" />
     <Content Include="Content\img\m.jpg" />
     <Content Include="Content\img\p.jpg" />
     <Content Include="Content\img\a.jpg" />

@@ -114,6 +114,30 @@ namespace Auction.Data.Migrations
                 Sold = false
             };
 
+            Product car5 = new Product
+            {
+                Name = "Audi Quattro Concept 2010",
+                AboutPrice = 1500000,
+                Year = 2010,
+                DateAdded = DateTime.Now,
+                ImageUrl = "/Content/img/aq.jpg",
+                ProductQuality = ProductQuality.Normal,
+                ProductType = ProductType.Auto,
+                Sold = false
+            };
+
+            Product car6 = new Product
+            {
+                Name = "BMW M3 G-Power SK II",
+                AboutPrice = 220000,
+                Year = 2011,
+                DateAdded = DateTime.Now,
+                ImageUrl = "/Content/img/bm.jpg",
+                ProductQuality = ProductQuality.Good,
+                ProductType = ProductType.Auto,
+                Sold = false
+            };
+
             Model.Auction auc1 = new Model.Auction
             {
                 Approved = false,
@@ -141,8 +165,35 @@ namespace Auction.Data.Migrations
                 Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             };
 
-            context.Products.AddOrUpdate(r => r.Name, car1, car2, car3, car4);
-            context.Auctions.AddOrUpdate(a => a.Name, auc1, auc2, auc3);
+            Model.Auction auc4 = new Model.Auction
+            {
+                Approved = false,
+                Product = car4,
+                Name = car4.Name,
+                StartTime = new DateTime(2016, 4, 8, 18, 0, 0),
+                Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            };
+
+            Model.Auction auc5 = new Model.Auction
+            {
+                Approved = false,
+                Product = car5,
+                Name = car5.Name,
+                StartTime = new DateTime(2016, 2, 2, 22, 0, 0),
+                Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            };
+
+            Model.Auction auc6 = new Model.Auction
+            {
+                Approved = false,
+                Product = car6,
+                Name = car6.Name,
+                StartTime = new DateTime(2016, 7, 7, 19, 0, 0),
+                Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            };
+
+            context.Products.AddOrUpdate(r => r.Name, car1, car2, car3, car4, car5, car6);
+            context.Auctions.AddOrUpdate(a => a.Name, auc1, auc2, auc3, auc4, auc5, auc6);
         }
     }
 }
