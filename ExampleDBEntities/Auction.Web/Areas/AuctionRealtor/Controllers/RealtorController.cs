@@ -61,5 +61,32 @@ namespace Auction.Web.Areas.AuctionRealtor.Controllers
             Unit.Commit();
             return RedirectToAction("Index");
         }
+
+        // 1 - Name
+        // 2 - Year
+        // 3 - Price
+        public ActionResult SortBy(int id)
+        {
+            var auctions = Unit.AuctionRepository.GetAllAuctions();
+            switch (id)
+            {
+                case 2:
+                    ViewBag.SortedBy = "Year";
+                    return View("Index", auctions.OrderBy(a => a.Product.Year).ToList());
+                case 3:
+                    ViewBag.SortedBy = "Price";
+                    return View("Index", auctions.OrderBy(a => a.Product.AboutPrice).ToList());
+                default:
+                    ViewBag.SortedBy = "Name";
+                    return View("Index", auctions.OrderBy(a => a.Name).ToList());
+            }
+        }
+
+        public ActionResult Search(string text)
+        {
+            var auctions = Unit.AuctionRepository.GetAllAuctions()
+                               .Where(a => a.Name.ToLower().Contains(text.ToLower()));
+            return View("Index", auctions.ToList());
+        }
     }
 }

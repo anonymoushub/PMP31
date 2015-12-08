@@ -1,4 +1,5 @@
-﻿@model List<Auction.Model.Auction>
+﻿@using System.Globalization
+@model List<Auction.Model.Auction>
 @{
     ViewBag.Title = "Index";
 }
@@ -7,11 +8,57 @@
 
 <div class="row">
     <h2>Auctions</h2>
+    <div class="col-md-12">
+        <div class="row right">
+            <div class="form-group">
+                <div class="input-group">
+                    <form action="/AuctionRealtor/Realtor/Search" method="POST" style="display: table;width: 100%;">
+                        <span class="input-group-addon"><span class="fa fa-search"></span></span>
+                        @Html.TextBox("text", "", new { @class = "form-control", @placeholder="Concept"})
+                        
+                        <span class="input-group-btn">
+                            <input class="btn btn-default m-r-3" type="submit" value="Search">
+                        </span>
+                    </form>
+                    <div class="input-group-btn">
+                        @if (ViewBag.SortedBy != null)
+                        {
+                            <span class="btn btn-primary disabled">@ViewBag.SortedBy</span>
+                        }
+                        else
+                        {
+                            <span class="btn btn-primary disabled">Not Sorted</span>
+                        }
+                        
+                        <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                @Html.ActionLink("Name", "SortBy",
+                                    new {area = "AuctionRealtor", controller = "Realtor", id = 1})
+                            </li>
+                            <li>
+                                @Html.ActionLink("Year", "SortBy",
+                                    new {area = "AuctionRealtor", controller = "Realtor", id = 2})
+                            </li>
+                            <li>
+                                @Html.ActionLink("Price $", "SortBy",
+                                    new {area = "AuctionRealtor", controller = "Realtor", id = 3})
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     @foreach (var a in Model)
     {
         <div class="col-md-4 bordered">
             <h2>@a.Name</h2>
+            <span class="a-year">@a.Product.Year</span>
             <img src="@a.Product.ImageUrl" class="img" />
+
+            @((int)a.Product.AboutPrice) $
+
             <p>
                 @Html.ActionLink("Details", "Details", new { a.Id },
                                     new { @class="btn btn-default btnm" })

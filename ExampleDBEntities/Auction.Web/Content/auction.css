@@ -6,16 +6,8 @@
     width: 100%;
 }
 
-.hdr {
-    height: 105px;
-}
-
 .bordered {
     border: 1px solid #ddd;
-}
-
-.btnm {
-    margin-top: 10px;
 }
 
 .mt-50 {
@@ -26,4 +18,21 @@ h2 {
 }
 .w-95p {
     width: 95%;
+}
+
+.m-r-3 {
+    margin-right: 3px;
+}
+
+
+.m-l-0 {
+    margin-left: 0;
+}
+
+.a-year {
+    position: absolute;
+    padding: 10px;
+    background: #b4b4fa;
+    background: rgba(180,180,250,0.8);
+    color: aliceblue;
 }
